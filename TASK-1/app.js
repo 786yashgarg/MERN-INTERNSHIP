@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+const users = [];
 
 const app = express();
 
@@ -28,6 +29,22 @@ app.post("/submit", (req, res) => {
 
         console.log(req.body);
 
+        // Server-side validation
+  if (!name || !email || !mobile || !password) {
+        return res.send("All fields are required.");
+    }
+
+    if (mobile.length !== 10) {
+        return res.send("Invalid mobile number.");
+    }
+
+    if (password.length < 6) {
+        return res.send("Password must be at least 6 characters.");
+    }
+    
+    users.push({ name, email, mobile, password });
+
+    console.log(users);
 
     res.render("index", {
         submitted: true,
