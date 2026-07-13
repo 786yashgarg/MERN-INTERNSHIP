@@ -37,5 +37,86 @@ button{
     padding:10px 20px;
 
     cursor:pointer;
+    
+    transition: all 0.3s ease;
+}
+
+button:hover{
+
+    background-color:#007bff;
+
+    color:white;
+
+    transform:scale(1.05);
+
+}
+
+a{
+
+    text-decoration:none;
+
+    color:blue;
+
+    transition:color 0.3s ease;
+
+}
+
+a:hover{
+
+    color:red;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+h1{
+
+    animation:fadeIn 1s ease;
+
+}
+
+@media (max-width:768px){
+
+    body{
+
+        margin-top:20px;
+
+    }
+
+    form{
+
+        width:90%;
+
+    }
+
+    input{
+
+        width:90%;
+
+    }
+
+    h1{
+
+        font-size:32px;
+
+    }
 
 }
