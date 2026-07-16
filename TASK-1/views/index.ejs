@@ -52,6 +52,7 @@
     <form action="/submit" method="POST">
 
         <input type="text"
+               id="name"
                name="name"
                placeholder="Enter Name"
                required>
@@ -59,6 +60,7 @@
         <br><br>
 
         <input type="email"
+               id="email"
                name="email"
                placeholder="Enter Email"
                required>
@@ -66,6 +68,7 @@
         <br><br>
 
         <input type="tel"
+               id="mobile"
                name="mobile"
                placeholder="Enter Mobile Number"
                pattern="[0-9]{10}"
@@ -74,12 +77,22 @@
 
         <br><br>       
         <input type="password"
+                id="password"
                name="password"
                placeholder="Enter Password"
                required>
-
+        <button type="button" id="togglePassword">Show</button>
+        <p id="strength"></p>
         <br><br>
-        
+        <input type="password"
+               id="confirmPassword"
+               name="confirmPassword"
+              placeholder="Confirm Password"
+              required>
+
+        <button type="button" id="toggleConfirmPassword">Show</button> 
+        <p id="message"></p> 
+        <br><br>   
         <button type="submit">Submit</button>
 
     </form>
