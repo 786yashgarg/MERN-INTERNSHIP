@@ -28,7 +28,7 @@ app.post("/submit", (req, res) => {
     const { name, email, mobile, password } = req.body;
 
         console.log(req.body);
-
+       
         // Server-side validation
   if (!name || !email || !mobile || !password) {
         return res.send("All fields are required.");
@@ -53,6 +53,17 @@ app.post("/submit", (req, res) => {
         mobile,
         password
     });
+
+});
+ app.get("/users", (req, res) => {
+
+   const safeUsers = users.map(user => ({
+    name: user.name,
+    email: user.email,
+    mobile: user.mobile
+}));
+
+res.json(safeUsers);
 
 });
 

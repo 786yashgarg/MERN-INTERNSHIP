@@ -69,10 +69,12 @@ togglePassword.addEventListener("click", function () {
 
     if (password.type === "password") {
         password.type = "text";
-        togglePassword.textContent = "Hide";
+       togglePassword.classList.remove("fa-eye");
+togglePassword.classList.add("fa-eye-slash"); 
     } else {
         password.type = "password";
-        togglePassword.textContent = "Show";
+        togglePassword.classList.remove("fa-eye-slash");
+togglePassword.classList.add("fa-eye");
     }
 
 });
@@ -81,10 +83,12 @@ toggleConfirmPassword.addEventListener("click", function () {
 
     if (confirmPassword.type === "password") {
         confirmPassword.type = "text";
-        toggleConfirmPassword.textContent = "Hide";
+       toggleConfirmPassword.classList.remove("fa-eye");
+toggleConfirmPassword.classList.add("fa-eye-slash");
     } else {
         confirmPassword.type = "password";
-        toggleConfirmPassword.textContent = "Show";
+        toggleConfirmPassword.classList.remove("fa-eye-slash");
+toggleConfirmPassword.classList.add("fa-eye");
     }
 
 });
@@ -110,3 +114,31 @@ password.addEventListener("input", function () {
     
 
 });
+// Fetch and Display Users
+
+fetch("/users")
+    .then(response => response.json())
+    .then(users => {
+
+        const usersList = document.getElementById("usersList");
+
+        usersList.innerHTML = "";
+
+        users.forEach(user => {
+
+            usersList.innerHTML += `
+                <div class="user-card">
+                    <h3>${user.name}</h3>
+                    <p>Email: ${user.email}</p>
+                    <p>Mobile: ${user.mobile}</p>
+                </div>
+            `;
+
+        });
+
+    })
+    .catch(error => {
+
+        console.log(error);
+
+    });

@@ -4,6 +4,9 @@
     <title>Task 1</title>
 
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
 </head>
 
 <body>
@@ -75,22 +78,30 @@
                maxlength="10"
                required>
 
-        <br><br>       
+        <br><br>    
+        <div class="password-container">  
         <input type="password"
                 id="password"
                name="password"
                placeholder="Enter Password"
                required>
-        <button type="button" id="togglePassword">Show</button>
+        <button type="button" id="togglePassword" class="eye-btn">
+    <i class="fa-solid fa-eye"></i>
+        </button>
+        </div>
         <p id="strength"></p>
         <br><br>
+        <div class="password-container">
         <input type="password"
                id="confirmPassword"
                name="confirmPassword"
               placeholder="Confirm Password"
               required>
 
-        <button type="button" id="toggleConfirmPassword">Show</button> 
+        <button type="button" id="toggleConfirmPassword" class="eye-btn">
+    <i class="fa-solid fa-eye"></i>
+        </button>
+        </div>
         <p id="message"></p> 
         <br><br>   
         <button type="submit">Submit</button>
@@ -126,6 +137,13 @@
     <% } %>
 
     <script src="/js/script.js"></script>
+    <hr>
+
+<h2>Registered Users</h2>
+
+<div id="usersList">
+    Loading users...
+</div>
  <footer>
 
     <p>© 2026 MERN Internship. All Rights Reserved.</p>
